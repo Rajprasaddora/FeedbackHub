@@ -10,12 +10,12 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 
 mongoose
-    .connect(keys.mongoURI)
+    .connect(keys.mongoURI, { useNewUrlParser: true })
     .then(() => {
         console.log("connected database");
     })
     .catch((err) => {
-        console.log("got error->\n", err);
+        console.log("got error while connecting to database->\n", err);
     });
 const app = express();
 
