@@ -16,7 +16,7 @@ const connectDB = async () => {
     }
 };
 connectDB();
-mongoose.set("bufferCommands", false);
+// mongoose.set("bufferCommands", false);
 const app = express();
 
 app.use(bodyParser.json());
