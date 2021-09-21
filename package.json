@@ -4,6 +4,10 @@
     "description": "",
     "main": "index.js",
     "private": "true",
+    "engines": {
+        "node":"14.17.2",
+        "npm":"7.20.3"
+    },
     "scripts": {
         "start": "node index.js",
         "server": "nodemon index.js",
