@@ -8,15 +8,17 @@ const authRoutes = require("./routes/authRoutes");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
-
-mongoose
-    .connect(keys.mongoURI, { useNewUrlParser: true })
-    .then(() => {
-        console.log("connected database");
-    })
-    .catch((err) => {
-        console.log("got error while connecting to database->\n", err);
-    });
+const connectDB = async () => {
+    await mongoose
+        .connect(keys.mongoURI, { useNewUrlParser: true })
+        .then(() => {
+            console.log("connected database");
+        })
+        .catch((err) => {
+            console.log("got error while connecting to database->\n", err);
+        });
+};
+connectDB();
 const app = express();
 
 app.use(bodyParser.json());
