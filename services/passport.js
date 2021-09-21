@@ -31,6 +31,7 @@ passport.use(
                 });
             } catch (error) {
                 console.log("error while connecting finding user", error);
+                return;
             }
 
             if (existingUser) {

@@ -10,7 +10,10 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 const connectDB = async () => {
     try {
-        await mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+        await mongoose.connect(keys.mongoURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
     } catch (error) {
         console.log("got error while connecting to database->\n", err);
     }
