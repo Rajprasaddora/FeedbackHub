@@ -9,16 +9,14 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const connectDB = async () => {
-    await mongoose
-        .connect(keys.mongoURI, { useNewUrlParser: true })
-        .then(() => {
-            console.log("connected database");
-        })
-        .catch((err) => {
-            console.log("got error while connecting to database->\n", err);
-        });
+    try {
+        await mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+    } catch (error) {
+        console.log("got error while connecting to database->\n", err);
+    }
 };
 connectDB();
+mongoose.set("bufferCommands", false);
 const app = express();
 
 app.use(bodyParser.json());
