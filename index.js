@@ -9,6 +9,14 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 
+mongoose
+    .connect(keys.mongoURI)
+    .then(() => {
+        console.log("connected database");
+    })
+    .catch((err) => {
+        console.log("got error->\n", err);
+    });
 const app = express();
 
 app.use(bodyParser.json());
@@ -32,15 +40,6 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
-
-mongoose
-    .connect(keys.mongoURI)
-    .then(() => {
-        console.log("connected database");
-    })
-    .catch((err) => {
-        console.log("got error->\n", err);
-    });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
