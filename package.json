@@ -5,8 +5,8 @@
     "main": "index.js",
     "private": "true",
     "engines": {
-        "node":"14.17.2",
-        "npm":"7.20.3"
+        "node": "14.17.2",
+        "npm": "7.20.3"
     },
     "scripts": {
         "start": "node index.js",
@@ -22,10 +22,13 @@
         "concurrently": "^6.2.1",
         "cookie-session": "^1.4.0",
         "express": "^4.17.1",
+        "lodash": "^4.17.21",
         "mongoose": "^5.13.3",
         "nodemon": "^2.0.12",
         "passport": "^0.4.1",
         "passport-google-oauth20": "^2.0.0",
+        "path-parser": "^6.1.0",
+        "sendgrid": "^5.2.3",
         "stripe": "^8.176.0"
     }
 }

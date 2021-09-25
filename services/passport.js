@@ -39,7 +39,7 @@ passport.use(
                 return done(null, existingUser);
             } else {
                 //adding user to database
-                const user = new User({ googleId: profile.id }).save();
+                const user = await new User({ googleId: profile.id }).save();
 
                 done(null, user);
             }
